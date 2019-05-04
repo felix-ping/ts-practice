@@ -23,8 +23,8 @@
           <file leaf-file-name="test.ts" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="202">
-                  <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
+                <state relative-caret-position="328">
+                  <caret line="120" column="14" selection-start-line="120" selection-start-column="14" selection-end-line="120" selection-end-column="14" />
                 </state>
               </provider>
             </entry>
@@ -36,8 +36,8 @@
           <file leaf-file-name="test.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="476">
-                  <caret line="93" selection-start-line="93" selection-end-line="93" />
+                <state relative-caret-position="296">
+                  <caret line="68" selection-start-line="68" selection-end-line="68" />
                 </state>
               </provider>
             </entry>
@@ -133,7 +133,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1556873382687</updated>
-      <workItem from="1556873385861" duration="7661000" />
+      <workItem from="1556873385861" duration="9608000" />
     </task>
     <task id="LOCAL-00001" summary="断言跳过检查">
       <created>1556967233528</created>
@@ -142,14 +142,22 @@
       <option name="project" value="LOCAL" />
       <updated>1556967233529</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="泛型">
+      <created>1556983189959</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1556983189959</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7661000" />
+    <option name="totallyTimeSpent" value="9608000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10761347" />
@@ -184,20 +192,21 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="断言跳过检查" />
-    <option name="LAST_COMMIT_MESSAGE" value="断言跳过检查" />
+    <MESSAGE value="泛型" />
+    <option name="LAST_COMMIT_MESSAGE" value="泛型" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
+        <state relative-caret-position="296">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
+        <state relative-caret-position="328">
+          <caret line="120" column="14" selection-start-line="120" selection-start-column="14" selection-end-line="120" selection-end-column="14" />
         </state>
       </provider>
     </entry>

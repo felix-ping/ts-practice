@@ -94,18 +94,51 @@ let mySquare2 = createSquare(squareOptions);
 //用断言强行跳过检查
 let mySquare = createSquare(<SquareConfig>{ colour: "red", width: 100 });
 
+interface StringArray {
+  [index: number]: string;
+}
+let myArray: StringArray;
+myArray = ["Bob", "Fred"];
+let myStr: string = myArray[0];
+
+///////////我真的不知道这坨东西是要干啥
+// class Animal {
+//   name: string;
+// }
+// class Dog extends Animal {
+//   breed: string;
+// }
+// // 错误：使用数值型的字符串索引，有时会得到完全不同的Animal!
+// interface NotOkay {
+//   [x: number]: Animal;
+//   [x: string]: Dog;
+// }
+
+//数字索引类型必须是字符串索引类型的子类型
+interface NumberDictionary {
+  [index: string]: number|string|boolean;
+  length: number;    // 可以，length是number类型
+  name: string      // 错误，`name`的类型与索引类型返回值的类型不匹配
+  [abs:number]:boolean
+}
 
 
-class Animal {
-  name: string;
-}
-class Dog extends Animal {
-  breed: string;
+function printLabel(labelledObj: { label: string }) {
+  console.log(labelledObj.label);
 }
 
-// 错误：使用数值型的字符串索引，有时会得到完全不同的Animal!
-interface NotOkay {
-  [x: number]: Animal;
-  [x: string]: Dog;
+let myObj = { size: 10, label: "Size 10 Object" };
+printLabel(myObj);
+
+interface fnInterface {
+  (arg1:string,arg2:number):number|boolean
 }
+let fn1:fnInterface
+fn1=function (arg1:string,arg2:number) {
+  return +arg1+arg2
+}
+fn1('zhangsan',18)
+
+
+
 
