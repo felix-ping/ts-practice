@@ -54,3 +54,12 @@ mySearch = function (source, subString) {
     return source.search(subString) !== -1;
 };
 mySearch('a', '1');
+//void, never, object(非原始类型值,允许你给它赋任意值 - 但是却不能够在它上面调用任意的方法)
+//断言
+var someValue = "this is a string";
+var strLength = someValue.length;
+function createSquare(config) {
+    return;
+}
+//用断言强行跳过检查
+var mySquare = createSquare({ colour: "red", width: 100 });

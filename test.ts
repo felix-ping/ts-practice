@@ -73,4 +73,21 @@ mySearch = function(source, subString) {
 }
 mySearch('a','1')
 
+//void, never, object(非原始类型值,允许你给它赋任意值 - 但是却不能够在它上面调用任意的方法)
+
+//断言
+let someValue: any = "this is a string";
+let strLength: number = (someValue as string).length;
+
+
+interface SquareConfig {
+  color?: string;
+  width?: number;
+}
+function createSquare(config: SquareConfig): { color: string; area: number } {
+  return
+}
+//用断言强行跳过检查
+let mySquare = createSquare(<SquareConfig>{ colour: "red", width: 100 });
+
 
