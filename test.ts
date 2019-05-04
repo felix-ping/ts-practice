@@ -24,7 +24,7 @@ console.log(Week[0] === 'Sun');
 const enum Directions{Up,Down,Left,Right}
 let directions=[Directions.Up,Directions.Right]
 
-class Animal {
+class Animals {
   name: string;
   constructor(name: string) {
     this.name = name;
@@ -34,7 +34,7 @@ class Animal {
   }
 }
 
-let asd: Animal = new Animal('Jack');
+let asd: Animals = new Animals('Jack');
 console.log(asd.sayHi());
 
 
@@ -141,4 +141,63 @@ fn1('zhangsan',18)
 
 
 
+interface Counter {
+  (start: number): string;
+  interval: number;
+  reset(): void;
+}
+//这里为什么要断言?
+function getCounter(): Counter {
+  let counter = <Counter>function (start: number) { };
+  counter.interval = 123;
+  counter.reset = function () { };
+  return counter;
+}
 
+let c = getCounter();
+c(10);
+c.reset();
+c.interval = 5.0;
+
+
+
+
+class Animal {
+  name: string;
+  constructor(theName: string) { this.name = theName; }
+  move(distanceInMeters: number = 0) {
+    console.log(`${this.name} moved ${distanceInMeters}m.`);
+  }
+}
+
+class Snake extends Animal {
+  constructor(name: string) { super(name); }
+  move(distanceInMeters = 5) {
+    console.log("Slithering...");
+    super.move(distanceInMeters);
+  }
+}
+
+class Horse extends Animal {
+  constructor(name: string) { super(name); }
+  move(distanceInMeters = 45) {
+    console.log("Galloping...");
+    super.move(distanceInMeters);
+  }
+}
+
+let sam = new Snake("Sammy the Python");
+let tom: Animal = new Horse("Tommy the Palomino");
+
+sam.move();
+tom.move(34);
+
+//箭头函数
+let myAdd: (baseValue: number, increment: number) => number =
+(x: number, y: number): number => { return x + y; };
+
+//剩余参数
+function buildName(firstName: string, ...restOfName: string[]) {
+  return firstName + " " + restOfName.join(" ");
+}
+let employeeName = buildName("Joseph", "Samuel", "Lucas", "MacKinzie");
