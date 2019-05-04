@@ -83,11 +83,29 @@ let strLength: number = (someValue as string).length;
 interface SquareConfig {
   color?: string;
   width?: number;
+  [ x: string]: any;
 }
 function createSquare(config: SquareConfig): { color: string; area: number } {
   return
 }
+//正常跳过类型检查:索引签名
+let squareOptions = { colour: "red", width: 100,xxx:'xxx' };
+let mySquare2 = createSquare(squareOptions);
 //用断言强行跳过检查
 let mySquare = createSquare(<SquareConfig>{ colour: "red", width: 100 });
 
+
+
+class Animal {
+  name: string;
+}
+class Dog extends Animal {
+  breed: string;
+}
+
+// 错误：使用数值型的字符串索引，有时会得到完全不同的Animal!
+interface NotOkay {
+  [x: number]: Animal;
+  [x: string]: Dog;
+}
 

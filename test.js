@@ -1,3 +1,16 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var a = function (xx) { return xx; };
 function getLength(something) {
     if (something.length) {
@@ -61,5 +74,20 @@ var strLength = someValue.length;
 function createSquare(config) {
     return;
 }
+//正常跳过类型检查:索引签名
+var squareOptions = { colour: "red", width: 100, xxx: 'xxx' };
+var mySquare2 = createSquare(squareOptions);
 //用断言强行跳过检查
 var mySquare = createSquare({ colour: "red", width: 100 });
+var Animal = /** @class */ (function () {
+    function Animal() {
+    }
+    return Animal;
+}());
+var Dog = /** @class */ (function (_super) {
+    __extends(Dog, _super);
+    function Dog() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return Dog;
+}(Animal));
