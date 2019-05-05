@@ -23,8 +23,8 @@
           <file leaf-file-name="test.ts" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="245">
-                  <caret line="186" column="1" lean-forward="true" selection-start-line="186" selection-start-column="1" selection-end-line="186" selection-end-column="1" />
+                <state relative-caret-position="480">
+                  <caret line="224" column="1" lean-forward="true" selection-start-line="224" selection-start-column="1" selection-end-line="224" selection-end-column="1" />
                 </state>
               </provider>
             </entry>
@@ -36,7 +36,7 @@
           <file leaf-file-name="test.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-838">
+                <state relative-caret-position="-1075">
                   <caret line="81" selection-start-line="81" selection-end-line="81" />
                 </state>
               </provider>
@@ -138,7 +138,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1556873382687</updated>
-      <workItem from="1556873385861" duration="12148000" />
+      <workItem from="1556873385861" duration="16536000" />
     </task>
     <task id="LOCAL-00001" summary="断言跳过检查">
       <created>1556967233528</created>
@@ -161,14 +161,22 @@
       <option name="project" value="LOCAL" />
       <updated>1556988803657</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="函数,枚举">
+      <created>1556991253462</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1556991253462</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12148000" />
+    <option name="totallyTimeSpent" value="16536000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10761347" />
@@ -205,20 +213,33 @@
     <MESSAGE value="断言跳过检查" />
     <MESSAGE value="泛型" />
     <MESSAGE value="数字索引与字符串索引类型" />
-    <option name="LAST_COMMIT_MESSAGE" value="数字索引与字符串索引类型" />
+    <MESSAGE value="函数,枚举" />
+    <option name="LAST_COMMIT_MESSAGE" value="函数,枚举" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/test.ts</url>
+          <line>97</line>
+          <properties lambdaOrdinal="-1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-838">
+        <state relative-caret-position="-1075">
           <caret line="81" selection-start-line="81" selection-end-line="81" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="186" column="1" lean-forward="true" selection-start-line="186" selection-start-column="1" selection-end-line="186" selection-end-column="1" />
+        <state relative-caret-position="480">
+          <caret line="224" column="1" lean-forward="true" selection-start-line="224" selection-start-column="1" selection-end-line="224" selection-end-column="1" />
         </state>
       </provider>
     </entry>

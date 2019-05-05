@@ -201,3 +201,26 @@ function buildName(firstName: string, ...restOfName: string[]) {
   return firstName + " " + restOfName.join(" ");
 }
 let employeeName = buildName("Joseph", "Samuel", "Lucas", "MacKinzie");
+
+
+//泛型
+interface first{
+  <T>(arg1:T,arg2:T):T
+
+}
+let result:first
+result = function plus<T>(arg1:T,arg2:T):T {
+  return arg1 <= arg2 ? arg2 : arg1;
+}
+result<number>(1,2)
+//两个泛型之间不能相加 但是如果我要求两个参数之和怎么办?number?
+
+interface go{
+  change<T>(val:T):T
+}
+class Money implements go{
+  change<T>(val:T):T{
+    return val
+  }
+}
+let earning = new Money()

@@ -152,3 +152,17 @@ function buildName(firstName) {
     return firstName + " " + restOfName.join(" ");
 }
 var employeeName = buildName("Joseph", "Samuel", "Lucas", "MacKinzie");
+var result;
+result = function plus(arg1, arg2) {
+    return arg1 <= arg2 ? arg2 : arg1;
+};
+result(1, 2);
+var Money = /** @class */ (function () {
+    function Money() {
+    }
+    Money.prototype.change = function (val) {
+        return val;
+    };
+    return Money;
+}());
+var earning = new Money();
