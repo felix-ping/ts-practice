@@ -224,3 +224,4 @@ class Money implements go{
   }
 }
 let earning = new Money()
+console.log(1)
