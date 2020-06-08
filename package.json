@@ -1,0 +1,9 @@
+{
+  "name": "ts-practice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:felix-ping/ts-practice.git",
+  "author": "felix-ping <felix-ping@qq.com>",
+  "license": "MIT",
+  "devDependencies": {}
+}

@@ -20,22 +20,25 @@ function getLength(something) {
         return something.toString().length;
     }
 }
+;
+var expectBoolean = false;
+var u = undefined;
+u = 1;
+function getLength2(something) {
+    return something.toString();
+}
 var xcatliu;
 xcatliu[0] = 'XcaLiu';
 xcatliu[1] = 25;
 xcatliu.push('http://xcatliu.com/');
-var Week;
-(function (Week) {
-    Week[Week["Sun"] = 0] = "Sun";
-    Week[Week["Mon"] = 1] = "Mon";
-    Week[Week["Tue"] = 2] = "Tue";
-    Week[Week["Wed"] = 3] = "Wed";
-    Week[Week["Thu"] = 4] = "Thu";
-    Week[Week["Fri"] = 5] = "Fri";
-    Week[Week["Sat"] = 6] = "Sat";
-})(Week || (Week = {}));
-console.log(Week[0] === 'Sun');
-var directions = [0 /* Up */, 3 /* Right */];
+// enum Week {
+//   Sun, Mon, Tue, Wed, Thu, Fri, Sat
+// }
+// console.log(Week[0] === 'Sun');
+//常数枚举
+// const enum Directions { Up, Down, Left, Right }
+// let directions = [Directions.Up, Directions.Right];
+// (window as any).foo=1
 var Animals = /** @class */ (function () {
     function Animals(name) {
         this.name = name;
@@ -47,6 +50,13 @@ var Animals = /** @class */ (function () {
 }());
 var asd = new Animals('Jack');
 console.log(asd.sayHi());
+function getCacheData(key) {
+    return window.cache[key];
+}
+var tom1 = getCacheData('tom1');
+console.log("a -> tom1", tom1);
+tom1.run();
+var mySum = function (x, y) { return x + y; };
 var Car = /** @class */ (function () {
     function Car(name) {
         this.name = name;
@@ -67,10 +77,21 @@ mySearch = function (source, subString) {
     return source.search(subString) !== -1;
 };
 mySearch('a', '1');
-//void, never, object(非原始类型值,允许你给它赋任意值 - 但是却不能够在它上面调用任意的方法)
+//void, never, object(非原始类型值,允许你给它赋任意值 -
+// 但是却不能够在它上面调用任意的方法)
 //断言
 var someValue = "this is a string";
 var strLength = someValue.length;
+function reverse(x) {
+    if (typeof x === 'number') {
+        return Number(x.toString().split('').reverse().join(''));
+    }
+    else if (typeof x === 'string') {
+        return x.split('').reverse().join('');
+    }
+}
+var x = reverse('qwerty');
+console.log("a -> x", x);
 function createSquare(config) {
     return;
 }

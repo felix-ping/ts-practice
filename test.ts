@@ -1,29 +1,36 @@
-let a=function(xx:string):string{return xx}
+var a = function (xx: string): string { return xx }
 
-function getLength(something:string|number):number{
-  if((<string>something).length){
+function getLength(something: string | number): number {
+  if ((<string>something).length) {
     return (<string>something).length
-  }else {
+  } else {
     return something.toString().length
   }
-}
+};
 
+let expectBoolean: boolean = false
+let u: number = undefined;
+u = 1
+
+function getLength2(something: string | number): string {
+  return something.toString();
+}
 
 let xcatliu: [string, number];
 xcatliu[0] = 'XcaLiu';
 xcatliu[1] = 25;
 xcatliu.push('http://xcatliu.com/');
 
-enum Week{
-  Sun,Mon,Tue,Wed,Thu,Fri,Sat
-}
+// enum Week {
+//   Sun, Mon, Tue, Wed, Thu, Fri, Sat
+// }
 
-console.log(Week[0] === 'Sun');
+// console.log(Week[0] === 'Sun');
 
 //常数枚举
-const enum Directions{Up,Down,Left,Right}
-let directions=[Directions.Up,Directions.Right]
-
+// const enum Directions { Up, Down, Left, Right }
+// let directions = [Directions.Up, Directions.Right];
+// (window as any).foo=1
 class Animals {
   name: string;
   constructor(name: string) {
@@ -37,28 +44,39 @@ class Animals {
 let asd: Animals = new Animals('Jack');
 console.log(asd.sayHi());
 
+function getCacheData(key: string): any {
+  return (window as any).cache[key];
+}
 
+interface Cat {
+  name: string;
+  run(): void;
+}
+
+const tom1 = getCacheData('tom1') as Cat;
+console.log(`a -> tom1`, tom1)
+tom1.run();
 //实现implements
 interface Alarm {
   alert()
 }
-interface Light extends Alarm{
+interface Light extends Alarm {
   lightOn();
-  lightOff()
+  lightOff();
 }
-
-class Car implements Light{
-  name:string;
-  constructor(name:string){
+let mySum: (x: number, y: number) => number = (x: number, y: number): number => x + y
+class Car implements Light {
+  name: string;
+  constructor(name: string) {
     this.name = name
   }
-  alert(){
+  alert() {
     'xxx'
   }
-  lightOn(){
+  lightOn() {
     console.log('light on');
   }
-  lightOff(){
+  lightOff() {
     console.log('light off');
   }
 }
@@ -68,28 +86,39 @@ interface SearchFunc {
 }
 
 let mySearch: SearchFunc;
-mySearch = function(source, subString) {
+mySearch = function (source, subString): boolean {
   return source.search(subString) !== -1;
 }
-mySearch('a','1')
+mySearch('a', '1')
 
-//void, never, object(非原始类型值,允许你给它赋任意值 - 但是却不能够在它上面调用任意的方法)
+//void, never, object(非原始类型值,允许你给它赋任意值 -
+// 但是却不能够在它上面调用任意的方法)
 
 //断言
 let someValue: any = "this is a string";
 let strLength: number = (someValue as string).length;
+function reverse(x: string): string;
+function reverse(x: number): number;
+function reverse(x: number | string): number | string {
+  if (typeof x === 'number') {
+    return Number(x.toString().split('').reverse().join(''));
+  } else if (typeof x === 'string') {
+    return x.split('').reverse().join('');
+  }
+}
 
-
+let x = reverse('qwerty')
+console.log(`a -> x`, x)
 interface SquareConfig {
   color?: string;
   width?: number;
-  [ x: string]: any;
+  [x: string]: any;
 }
 function createSquare(config: SquareConfig): { color: string; area: number } {
   return
 }
 //正常跳过类型检查:索引签名
-let squareOptions = { colour: "red", width: 100,xxx:'xxx' };
+let squareOptions = { colour: "red", width: 100, xxx: 'xxx' };
 let mySquare2 = createSquare(squareOptions);
 //用断言强行跳过检查
 let mySquare = createSquare(<SquareConfig>{ colour: "red", width: 100 });
@@ -116,10 +145,10 @@ let myStr: string = myArray[0];
 
 //数字索引类型必须是字符串索引类型的子类型
 interface NumberDictionary {
-  [index: string]: number|string|boolean;
+  [index: string]: number | string | boolean;
   length: number;    // 可以，length是number类型
   name: string      // 错误，`name`的类型与索引类型返回值的类型不匹配
-  [abs:number]:boolean
+  [abs: number]: boolean
 }
 
 
@@ -131,13 +160,13 @@ let myObj = { size: 10, label: "Size 10 Object" };
 printLabel(myObj);
 
 interface fnInterface {
-  (arg1:string,arg2:number):number|boolean
+  (arg1: string, arg2: number): number | boolean
 }
-let fn1:fnInterface
-fn1=function (arg1:string,arg2:number) {
-  return +arg1+arg2
+let fn1: fnInterface
+fn1 = function (arg1: string, arg2: number) {
+  return +arg1 + arg2
 }
-fn1('zhangsan',18)
+fn1('zhangsan', 18)
 
 
 
@@ -153,7 +182,6 @@ function getCounter(): Counter {
   counter.reset = function () { };
   return counter;
 }
-
 let c = getCounter();
 c(10);
 c.reset();
@@ -194,7 +222,7 @@ tom.move(34);
 
 //箭头函数
 let myAdd: (baseValue: number, increment: number) => number =
-(x: number, y: number): number => { return x + y; };
+  (x: number, y: number): number => { return x + y; };
 
 //剩余参数
 function buildName(firstName: string, ...restOfName: string[]) {
@@ -204,24 +232,23 @@ let employeeName = buildName("Joseph", "Samuel", "Lucas", "MacKinzie");
 
 
 //泛型
-interface first{
-  <T>(arg1:T,arg2:T):T
+interface first {
+  <T>(arg1: T, arg2: T): T
 
 }
-let result:first
-result = function plus<T>(arg1:T,arg2:T):T {
+let result: first
+result = function plus<T>(arg1: T, arg2: T): T {
   return arg1 <= arg2 ? arg2 : arg1;
 }
-result<number>(1,2)
+result<number>(1, 2)
 //两个泛型之间不能相加 但是如果我要求两个参数之和怎么办?number?
 
-interface go{
-  change<T>(val:T):T
+interface go {
+  change<T>(val: T): T
 }
-class Money implements go{
-  change<T>(val:T):T{
+class Money implements go {
+  change<T>(val: T): T {
     return val
   }
 }
 let earning = new Money()
-console.log(1)
