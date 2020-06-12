@@ -252,3 +252,94 @@ class Money implements go {
   }
 }
 let earning = new Money()
+
+
+
+class Animal2222 {
+  protected readonly name;
+  public constructor(name) {
+    this.name = name;
+  }
+  public eat(){}
+  private run(){
+
+  }
+  protected sleep(){}
+  jump(){}
+}
+
+class Catx extends Animal2222 {
+  constructor(name) {
+    super(name);
+    console.log(this.name);
+  }
+}
+
+
+function swap2<T,U>(tuple:[T,U]):[U,T]{
+  return [tuple[1],tuple[0]]
+}
+
+swap2([7,'seven'])
+
+
+function copyFields<T extends U, U>(target: T, source: U): T {
+  for (let id in source) {
+      // target[id] = (<T>source)[id];//为何？
+      // target[id] = (<U>source)[id];//报错
+      // target[id] = source[id];//报错
+      // (<T>target)[id] = (<U>source)[id];//报错
+      // (<U>target)[id]  = source[id];
+      // (<T>target)[id] = (<T>source)[id];
+      // (<U>target)[id] = (<T>source)[id];
+      // (<U>target)[id] = (<U>source)[id]; 
+  }
+  return target;
+}
+let obj = { a: 1, b: 2, c: 3, d: 4 };
+copyFields(obj, { b: 10, d: 20 });
+
+type ReturnType2<T extends (...args: any) => any> = T extends (...args: any) => infer R ? R : any;
+
+let test2:ReturnType2<any>=function(c){
+  console.log(c)
+}
+
+
+type x ='a'|'b'|'c'
+let f :x = 'a'
+
+
+
+type Container<T> = { value: T };
+let test:Container<string> ={value:'sx'}
+
+
+type Alias = { num: number }
+interface Interface {
+    num: number;
+}
+declare function aliased(arg: Alias): Alias;
+declare function interfaced(arg: Interface): Interface;
+
+
+type Words = 'a'|'b'|"c";
+
+type W<T> = T extends Words ? true : false;
+
+type WA = W<'a'>; // -> true
+let c345:W<'d'>=false
+type WD = W<'d'>; // -> false
+
+type foo<T extends string = 'hello world'> = T;
+let soda:foo= 'hello world'
+
+type num = 1;
+type str = 'hello world';
+
+type IsNumber<N> = N extends number ? Array<number> : Array<string>;
+
+type result1 = IsNumber<num>; // "yes, is a number"
+type result2 = IsNumber<str>; // "no, not a number"
+
+let x657: result1 = [1,2]

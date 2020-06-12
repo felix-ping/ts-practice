@@ -187,3 +187,50 @@ var Money = /** @class */ (function () {
     return Money;
 }());
 var earning = new Money();
+var Animal2222 = /** @class */ (function () {
+    function Animal2222(name) {
+        this.name = name;
+    }
+    Animal2222.prototype.eat = function () { };
+    Animal2222.prototype.run = function () {
+    };
+    Animal2222.prototype.sleep = function () { };
+    Animal2222.prototype.jump = function () { };
+    return Animal2222;
+}());
+var Catx = /** @class */ (function (_super) {
+    __extends(Catx, _super);
+    function Catx(name) {
+        var _this = _super.call(this, name) || this;
+        console.log(_this.name);
+        return _this;
+    }
+    return Catx;
+}(Animal2222));
+function swap2(tuple) {
+    return [tuple[1], tuple[0]];
+}
+swap2([7, 'seven']);
+function copyFields(target, source) {
+    for (var id in source) {
+        // target[id] = (<T>source)[id];//为何？
+        // target[id] = (<U>source)[id];//报错
+        // target[id] = source[id];//报错
+        // (<T>target)[id] = (<U>source)[id];//报错
+        // (<U>target)[id]  = source[id];
+        // (<T>target)[id] = (<T>source)[id];
+        // (<U>target)[id] = (<T>source)[id];
+        // (<U>target)[id] = (<U>source)[id]; 
+    }
+    return target;
+}
+var obj = { a: 1, b: 2, c: 3, d: 4 };
+copyFields(obj, { b: 10, d: 20 });
+var test2 = function (c) {
+    console.log(c);
+};
+var f = 'a';
+var test = { value: 'sx' };
+var c345 = false;
+var soda = 'hello world';
+var x657 = [1, 2];
