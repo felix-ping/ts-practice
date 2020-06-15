@@ -342,4 +342,8 @@ type IsNumber<N> = N extends number ? Array<number> : Array<string>;
 type result1 = IsNumber<num>; // "yes, is a number"
 type result2 = IsNumber<str>; // "no, not a number"
 
-let x657: result1 = [1,2]
+let x657: IsNumber<num>  = [1,2]
+let x876 :IsNumber<boolean>=['true','false']
+
+
+
